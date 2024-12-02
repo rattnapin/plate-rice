@@ -1,0 +1,16 @@
+.box {
+    width: 350px;
+    height: auto;
+    position: absolute;
+    top: 20%;
+    left: 3%;
+
+}
+.sandwich {
+    width: 350px;
+    height: auto;
+    position: absolute;
+    top: 55%;
+    left: 30%;
+
+}
