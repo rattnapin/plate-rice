@@ -1,0 +1,123 @@
+body {
+    background-color: #c9d0c6;
+    margin: 0; /* Remove default browser margin for consistent alignment */
+    cursor: url("rice-spoon.png") -1000 -500, auto; /* Adjust x and y offsets */
+}
+
+.title {
+    width: 700px;
+    height: auto;
+    margin: 0; /* Avoid unnecessary margin around the title */
+}
+
+.empty {
+    width: 500px;
+    height: auto;
+    
+}
+.empty  { cursor: none; }
+.empty {
+    width: 500px;
+    height: auto;
+    border-radius: 0%;
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+    transition: transform .8s ease-in-out;
+}
+
+.empty:hover {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    cursor: none;
+}
+
+
+.chicken {
+    width: 400px;
+    height: auto;
+    position: absolute;
+    top: 0%;
+    left: 72%;
+}
+.soup {
+    width: 350px;
+    height: auto;
+    position: absolute;
+    top: 5%;
+    left: 1%;
+
+}
+.larb {
+    width: 300px;
+    height: auto;
+    position: absolute;
+    top: 51%;
+    left: 68%;
+
+}
+.somtum {
+    width: 350px;
+    height: auto;
+    position: absolute;
+    top: 48%;
+    left: 9%;
+
+}
+
+.headline-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: auto; /* Let the content determine the height */
+    margin-top: 0px; /* Space above the headline */
+    text-align: center; /* Optional, ensure horizontal alignment */
+}
+
+/* Ensure the image scales properly */
+.headline-container img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Avoid inline spacing issues with the image */
+}
+
+.content {
+    font-family: "Inter", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ff5900;
+    padding-left: 0.25em;
+}
+
+@media only screen and (max-width: 767px) {
+    .content {
+        font-size: 2rem !important;
+        padding-left: 0.25em;
+    }
+}
+
+.outer {
+    overflow: hidden;  
+}
+
+.outer div {
+    display: inline-block;
+}
+
+.loop {
+    white-space: nowrap;
+    animation: loop-anim 15s linear infinite;
+}
+
+@media only screen and (max-width: 767px) {
+    .loop {
+        animation: loop-anim 3.5s linear infinite;
+    }
+}
+
+@keyframes loop-anim {
+    0% {
+        margin-left: 0;
+    }
+    100% {
+        margin-left: -50% /* This works because of the div between "outer" and "loop" */
+    }
+}
