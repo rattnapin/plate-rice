@@ -1,0 +1,97 @@
+body {
+    background-color: #c9d0c6;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    justify-content: flex-start; /* Place items starting from the top */
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Top animation text container */
+.outer {
+    width: 100%; /* Full width of the page */
+    overflow: hidden;
+    position: absolute;
+    top: 20px; /* Adjust to position the text at the desired height */
+    text-align: center;
+}
+
+.outer div {
+    display: inline-block;
+}
+
+.loop {
+    white-space: nowrap;
+    animation: loop-anim 15s linear infinite;
+}
+
+@media only screen and (max-width: 767px) {
+    .loop {
+        animation: loop-anim 3.5s linear infinite;
+    }
+}
+
+@keyframes loop-anim {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Moves the text across the screen */
+    }
+}
+
+/* Text Styling */
+.content {
+    font-family: "Inter", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ff5900;
+    padding-left: 0.25em;
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+@media only screen and (max-width: 767px) {
+    .content {
+        font-size: 2rem !important;
+        padding-left: 0.25em;
+    }
+}
+
+/* Plate container for positioning */
+.plate-container {
+    display: flex;
+    align-items: center; /* Align fork, plate, and spoon vertically */
+    justify-content: center; /* Center the entire group horizontally */
+    position: relative;
+    margin-top: 200px; /* Add space between the text and the plate container */
+}
+
+/* Rice plate styling */
+.rice-plate {
+    width: 500px;
+    height: auto;
+    border-radius: 0%;
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+    transition: transform .8s ease-in-out;
+}
+
+.rice-plate:hover {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+/* Fork styling */
+.folk {
+    width: 600px; /* Adjust size of the fork */
+    height: auto;
+    margin-right: -150px; /* Slight overlap with the plate */
+}
+
+/* Spoon styling */
+.spoon {
+    width: 600px; /* Adjust size of the spoon */
+    height: auto;
+    margin-left: -150px; /* Slight overlap with the plate */
+}

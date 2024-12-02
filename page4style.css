@@ -1,0 +1,119 @@
+/* General Body Styling */
+body {
+    background-color: #c9d0c6;
+    margin: 0; /* Remove default browser margin */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: flex-start; /* Start from the top */
+    align-items: center; /* Center horizontally */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Typewriter Text Styling */
+.typewriter {
+    width: 100%;
+    background-color: transparent; /* Transparent background */
+    padding: 20px 0; /* Add some padding above and below */
+    text-align: center; /* Center the text */
+}
+
+.typewriter h1 {
+    color: #ff5900;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid #ff5900; /* The typewriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Centers the text block */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 5s steps(50, end),
+      blink-caret .75s step-end infinite;
+}
+
+/* Typing Effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* Typewriter Cursor Effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #ff5900 }
+}
+
+/* Plate Container for Positioning */
+.plate-container {
+    display: flex;
+    align-items: center; /* Align images vertically */
+    justify-content: center; /* Center images horizontally */
+    position: relative;
+    margin-top: 50px; /* Space between text and images */
+}
+
+/* General Styling for Images */
+.shock, .question {
+    width: 350px; /* Adjust size as needed */
+    height: auto;
+}
+
+/* Blinking Effect */
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+.shock {
+    animation: blink 1s infinite; /* Blinks every second */
+    margin: 0 20px; /* Optional: Add spacing between images */
+}
+
+.question {
+    animation: blink 1s infinite; /* Blinks every second */
+    margin: 0 20px; /* Optional: Add spacing between images */
+}
+
+/* Styling for Plate */
+.food-gone { 
+    width: 500px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 0%;
+    animation: shake 0.5s infinite; /* Make the plate shake continuously */
+    margin: 100px; /* Optional: Add spacing between images */
+}
+
+/* Shake Animation */
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Responsive Adjustments */
+@media only screen and (max-width: 767px) {
+    .typewriter h1 {
+        font-size: 1.5rem !important;
+        letter-spacing: .1em;
+    }
+    
+    .shock, .question, .food-gone {
+        width: 150px; /* Adjust size for smaller screens */
+    }
+    
+    .plate-container {
+        margin-top: 30px; /* Reduce space on smaller screens */
+    }
+}

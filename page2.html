@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="page2style.css">
+    <title>Plate with Rice</title>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="knockingplate.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="plate-container">
+        <img class="folk" src="folk.gif" alt="Fork">
+        <a href="page3.html">
+        <img class="rice-plate" src="plate-with-rice.png" alt="Rice Plate">
+        </a>
+        <img class="spoon" src="spoon.gif" alt="Spoon">
+    </div>
+    <div style="margin-top: 20px;" class="outer">
+        <!-- This div is important! It lets us specify margin-left later on. -->
+        <div>
+            <div class="loop"><div class="content"> What's better than eating warm rice with flavourful curry?  </div></div>
+        </div>
+    </div>
+    
+    <script>
+    document.querySelectorAll('.outer').forEach(el => {
+        let content = el.querySelector('.content');
+    
+        repeatContent(content, el.offsetWidth);
+    
+        let slider = el.querySelector('.loop');
+        slider.innerHTML = slider.innerHTML + slider.innerHTML;
+    });
+    
+        
+    function repeatContent(el, till) {
+        let html = el.innerHTML;
+        let counter = 0; // prevents infinite loop
+        
+        while (el.offsetWidth < till && counter < 100) {
+            el.innerHTML += html;
+            counter += 1;
+        }
+    }
+    </script>
+</body>
+</html>

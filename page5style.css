@@ -1,0 +1,48 @@
+body {
+    background-color: #c9d0c6;
+    margin: 0;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+}
+a {
+    color: #0060B6;
+    text-decoration: none;
+}
+
+a:hover {
+    color:#00A0C6; 
+    text-decoration:none; 
+    cursor:pointer;  
+}
+
+.typewriter {
+    text-align: center; /* Center the text inside the typewriter container */
+}
+
+.typewriter h1 {
+    color: #ff5900;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid #ff5900; /* The typewriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Center horizontally */
+    letter-spacing: .15em; /* Space between letters */
+    font-size: 6rem; /* Increase font size */
+    animation: 
+      typing 3.5s steps(19, end),
+      blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #ff5900; }
+}

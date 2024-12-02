@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Dinner</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hide the default cursor */
+        body {
+            cursor: none;
+        }
+
+        /* Custom cursor styling */
+        .custom-cursor {
+            position: fixed;
+            width: 300px; /* Adjust size here */
+            height: 300px;
+            background: url("rice-spoon.png") no-repeat center center;
+            background-size: contain;
+            pointer-events: none;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+
+    <audio autoplay loop>
+        <source src="rice-cooker-song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="headline-container">
+        <img class="title" src="lets-having-dinner.png" alt="Dinner Title">
+    </div>
+
+    <img class="chicken" src="chicken-plate.gif" alt="Chicken Plate">
+    <img src="soup.gif" class="soup">
+    <img src="Larb.gif" class="larb">
+    <img src="Somtum.gif" class="somtum">
+    
+    <center>
+        <a href="page2.html">
+            <img class="empty" src="empty-plate.png" alt="Empty Plate">
+        </a>
+    </center>
+    <div style="margin-top: 120px;" class="outer">
+        <!-- This div is important! It lets us specify margin-left later on. -->
+        <div>
+            <div class="loop"><div class="content"> Scoop rice into a plate ✦</div></div>
+        </div>
+    </div>
+    
+    <script>
+    document.querySelectorAll('.outer').forEach(el => {
+        let content = el.querySelector('.content');
+    
+        repeatContent(content, el.offsetWidth);
+    
+        let slider = el.querySelector('.loop');
+        slider.innerHTML = slider.innerHTML + slider.innerHTML;
+    });
+    
+        
+    function repeatContent(el, till) {
+        let html = el.innerHTML;
+        let counter = 0; // prevents infinite loop
+        
+        while (el.offsetWidth < till && counter < 100) {
+            el.innerHTML += html;
+            counter += 1;
+        }
+    }
+    </script>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- Script to Follow Mouse Movement -->
+    <script>
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.pageX + 'px';
+            cursor.style.top = e.pageY + 'px';
+        });
+    </script>
+</body>
+</html>
